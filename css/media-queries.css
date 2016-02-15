@@ -184,6 +184,23 @@
 
   #category-menu{display: block;}
 
+  article .wrap-info {
+    width: 60%;
+    height: 72%;
+  }
+  article .wrap-info h2{
+
+    font-size:16px;
+  }
+.btn.watch-video {
+  height: 28px;
+  width: 132px;
+  padding-bottom: 5px;
+}
+.btn.watch-video span{
+  font-size: 10px;
+  line-height: 28px;
+} 
 
 
 /*   footer .social p {
@@ -234,11 +251,16 @@ article .btn:after{
     .wrap-shop .nav-hidden{
       top: 112px;
     }
+    article .wrap-info h2::after{
+      top: 25px;
+    }
     footer .social-wrap{
       margin-left: 24px;
     }
-    footer .social p {
+    footer .social p{
       margin-top: -7px;
     }
-
+   footer .social.index{
+    margin-top: 10px;
+   }
   }
