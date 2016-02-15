@@ -199,7 +199,7 @@
 }
 .btn.watch-video span{
   font-size: 10px;
-  line-height: 28px;
+  line-height: 24px;
 } 
 
 
@@ -260,7 +260,5 @@ article .btn:after{
     footer .social p{
       margin-top: -7px;
     }
-   footer .social.index p{
-    margin-top: 10px;
-   }
+ 
   }
