@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Linkor Skimboards</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media-queries.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script src="js/jquery/jquery-1.12.0.min.js"></script>
+	<!-- bxSlider Javascript file -->
+	<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			/*touch-menu*/
+			var touch = $('#touch-menu');
+			var menu = $('.top-nav');
+
+			$(touch).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+		        // menu.fadeToggle();
+		      });
+			$(window).resize(function(){
+				var wid = $(window).width();
+				if(wid > 935 && menu.is(':hidden')) {
+					menu.removeAttr('style');
+
+				}
+			});
+
+
+		    /////////////*category-menu*///////////////
+		    var categTouch = $('#category-menu');
+		    var categMenu = $('ul.nav-hidden');
+		    $(categTouch).on('click', function(e) {
+		    	e.preventDefault();
+		        categMenu.slideToggle();
+		        // categMenu.fadeToggle();
+		      });
+		    $(window).resize(function(){
+		    	var widt = $(window).width();
+		    	if(widt > 472) {
+		    		categMenu.removeAttr('style');
+		    	}
+		    });
+		    //////////////////////////
+ 	////////////*add class click touchMenu*////////////
+ 	var touchMenu = $('#touch-menu');
+ 	touchMenu.click(function(){
+ 		touchMenu.toggleClass("close-menu");
+ 	});
+
+ });
+</script>
+<!-- bxSlider CSS file -->
+<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+   <!--[if lte IE 8]> 
+  <script> 
+      document.createElement("article"); 
+      document.createElement("footer"); 
+      document.createElement("header"); 
+      document.createElement("hgroup"); 
+      document.createElement("section"); 
+			document.createElement("aside"); 
+			document.createElement("nav"); 
+			document.createElement('figure');
+			document.createElement('hgroup');
+			document.createElement('menu');
+   </script> 
+   <![endif]--> 
+ </head>
+ <body>
+ 	<div id="wrapper">
+ 		<div class="content other-pg">
+ 			<header class="clearfix">
+ 				<a href="index.html" class="logo-linkor">
+ 					<img src="img/logoLinlor.png" alt="linkor">
+ 				</a>
+ 				<div class="social right">
+ 					<a href="#" class="icon-yt"></a>
+ 					<a href="https://www.facebook.com/linkorskimboards/" class="icon-fb"></a>
+ 					<a href="#" class="icon-pt"></a>
+ 					<a href="#" class="language">ru</a>
+ 				</div>
+ 				<a href="#" id="touch-menu">
+ 					<span></span>
+ 				</a>
+ 				<ul class="top-nav">
+ 					<li><a href="#2">О нас</a></li>
+ 					<li><a href="#3">Магазин</a></li>
+ 					<li><a href="#22">Блог</a></li>
+ 					<li><a href="#232">Доставка и оплата</a></li>
+ 					<li><a href="#2323">Контакты</a></li>
+ 					<li class="bask"><a href="#77" class="basket">Корзина</a></li>
+ 				</ul>
+ 			</header>
+
+ 			<section class="container clearfix">
+ 				<div class="wrap-shop clearfix">
+ 					<h2 class="shop-skimboards">Магазин Skimboards</h2>
+ 					<a href="#" id="category-menu">Category&nbsp; <span>&raquo;</span></a>
+ 					<ul class="nav-hidden">
+ 						<li><a href="#">Accessory</a></li>
+ 						<li><a href="#">Apparel</a></li>
+ 						<li><a href="#">Double Carbon Fiber Epoxy</a></li>
+ 						<li><a href="#">E-Glass Epoxy</a></li>
+ 						<li><a href="#">Pro Model</a></li>
+ 					</ul>
+ 				</div>
+ 				<div class="services-wrap clearfix">
+ 					<a href="product.html">
+ 						<div class="services-item skim-Small">
+ 							<img src="img/ClassicSkim-1.png" alt="ClassicSkim-1">
+ 							<h3>Classic Skim</h3>
+ 							<p class="price">280 $</p>
+ 						</div>
+ 					</a>
+ 					<div class="services-item category">
+ 						<h2 clacc="category">Category</h2>
+ 						<ul class="nav">
+ 							<li><a href="#">Accessory</a></li>
+ 							<li><a href="#">Apparel</a></li>
+ 							<li><a href="#">Double Carbon Fiber Epoxy</a></li>
+ 							<li><a href="#">E-Glass Epoxy</a></li>
+ 							<li><a href="#">Pro Model</a></li>
+ 						</ul>
+ 					</div>
+ 					<a href="#">
+ 						<div class="services-item">
+ 							<img src="img/patron.png" alt="ClassicSkim-1">
+ 							<h3>Patron</h3>
+ 							<p class="price">350 $</p>
+ 						</div>
+ 					</a>
+ 					<a href="#">
+ 						<div class="services-item">
+ 							<img src="img/ClassicSkim-2.png" alt="ClassicSkim-1">
+ 							<h3>Classic Skim</h3>
+ 							<p class="price">280 $</p>
+ 						</div>
+ 					</a>
+ 					<a href="#">
+ 						<div class="services-item">
+ 							<img src="img/Arrow-2.png" alt="ClassicSkim-1">
+ 							<h3>Arrow</h3>
+ 							<p class="price">350 $</p>
+ 						</div>
+ 					</a>
+ 					<a href="#">
+ 						<div class="services-item">
+ 							<img src="img/patron-2.png" alt="ClassicSkim-1">
+ 							<h3>Patron</h3>
+ 							<p class="price">350 $</p>
+ 						</div>
+ 					</a>
+ 					<a href="#">
+ 						<div class="services-item">
+ 							<img src="img/ClassicSkim-2.png" alt="ClassicSkim-1">
+ 							<h3>Classic Skim</h3>
+ 							<p class="price">280 $</p>
+ 						</div>
+ 					</a>
+ 					<a href="#">
+ 						<div class="services-item">
+ 							<img src="img/Arrow.png" alt="ClassicSkim-1">
+ 							<h3>Arrow</h3>
+ 							<p class="price">350 $</p>
+ 						</div>
+ 					</a>
+ 					<a href="#">
+ 						<div class="services-item">
+ 							<img src="img/patron-2.png" alt="ClassicSkim-1">
+ 							<h3>Patron</h3>
+ 							<p class="price">350 $</p>
+ 						</div>
+ 					</a>
+
+
+ 				</div>
+ 				<a href="#" class="btn show-all">
+ 					<span>Показать все доски</span>
+ 				</a>
+ 			</section>
+
+
+ 		</div>
+ 		<footer class="other-pages">
+ 			<div class="social center">
+ 				<p>Присоединяйтесь к нам!</p>
+ 				<div class="social-wrap">
+ 					<a href="https://www.facebook.com/linkorskimboards/" class="icon-fb"></a>
+ 					<a href="#" class="icon-pt"></a>
+ 					<a href="#" class="icon-yt"></a>
+ 				</div>
+ 			</div>
+
+ 		</footer>
+
+ 	</div>
+ </body>
+ </html>
