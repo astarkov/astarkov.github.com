@@ -1,22 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Light-Life</title>
+	<title>Linkor Skimboards</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/media-queries.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/fonts.css">
 	<script src="js/jquery/jquery-1.12.0.min.js"></script>
-	<script src="js/jquery/jquery-ui.js"></script>
-	<script src="js/jquery/jquery.maskedinput.min.js"></script>
 	<!-- bxSlider Javascript file -->
-	<script src="js/jquery/jquery.bxslider.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+	<script>
+	$(document).ready(function(){
+
+	//////////////*Стирать! Тренировка*/////////
+/*		
+			var touchM = document.getElementById('touch-menu');
+			var topNav = document.getElementsByClassName('top-nav')[0];
+			var linkorW = document.getElementById("linkorWake");
+			console.log(linkorW);
+			linkorW.addEventListener("click",styleNone);
+			function styleNone(){
+				if(touchM.className=='close-menu'){
+				topNav.style.display="none";
+				// alert('Есть класс');
+				}
+			};*/
+
+
+
+			$('.bxslider').bxSlider({
+				auto: true,
+			  	// autoControls: true,
+			  	// autoHover: true,
+			  	pause: 2000,
+			  	speed: 800
+			  });
+			 ///////* Hover text: Linkor Wake. Positioning arrows*////////
+		var linkorWake = $("#linkorWake"),
+				bxPrev = $('.bx-prev'),
+				bxNext = $('.bx-next'),
+		    withDocument = $(window).width();
+		        if(withDocument > 464){
+		        	linkorWake.mouseover(function(){
+		        		bxPrev.css({"left":"30px"});
+		        		bxPrev.css({"z-index":"1"});
+		        		bxNext.css({"z-index":"1"});
+		        		bxNext.css({"right":"30px"});
+		        	});
+		        	linkorWake.mouseout(function(){
+		        		bxPrev.css({"left":""});
+		        		bxNext.css({"right":""});
+		        	});
+		        }
+//////////////////////////////////////////////////
+
+			/*touch-menu*/
+			var touch = $('#touch-menu');
+		    var menu = $('.top-nav');
+		 
+		    $(touch).on('click', function(e) {
+		        e.preventDefault();
+		        menu.slideToggle();
+		        // menu.fadeToggle();
+		    });
+		    $(window).resize(function(){
+		        var wid = $(window).width();
+		        if(wid > 935 && menu.is(':hidden')) {
+		            menu.removeAttr('style');
+		        }
+		    });
+ 	////////////*add class click touchMenu*////////////
+		    var touchMenu = $('#touch-menu');
+		    	touchMenu.click(function(){
+					touchMenu.toggleClass("close-menu");
+					});
+
+
+		});
+	</script>
 	<!-- bxSlider CSS file -->
-	<link href="css/jquery.bxslider.css" rel="stylesheet" />
-	<link href="css/jquery-ui.css" rel="stylesheet" />
+	<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
    <!--[if lte IE 8]> 
    <script> 
       document.createElement("article"); 
@@ -31,295 +95,108 @@
 			document.createElement('menu');
    </script> 
    <![endif]--> 
- </head>
+</head>
 
- <body>
- 	<div id="wrapper">
- 		<div class="wrap-content">
- 			<header>
- 				<div class="header-top clearfix">
- 					<div class="container">
- 						<a href="#" class="logo left"><img src="img/Logo.png" alt="Light-Life"></a>
- 						<a href="#" class="language left">Eng</a>
- 						<nav class="top-nav right">
- 							<ul>
- 								<li><a href="#">Номера и цены</a></li>
- 								<li><a href="#">Дополнительные услуги</a></li>
- 								<li><a href="#">Что мы предлагаем</a></li>
- 								<li><a href="#">Отзывы</a></li>
- 								<li><a href="#">Рядом с нами</a></li>
- 								<li><a href="#">Как добраться</a></li>
- 								<li><a href="#">Контакты</a></li>
- 							</ul>
- 						</nav>
- 					</div>
- 				</div>
- 				<div class="baner clearfix">
- 					<div class="container">
- 						<div class="wrap-hostel clearfix">
- 							<h1><span>хостел</span> в центре Киева</h1>
- 			
- 							<div class="phones-top right">
- 								<span>+38&nbsp;(044)&nbsp;<span class="bold">123-45-67</span></span>
- 								<span>+38&nbsp;(096)&nbsp;<span class="bold">123-45-67</span></span>
- 							</div>
- 			
- 						</div>
- 						<div class="clearfix">
- 							<a href="#" id="call-back" class="request-call right clearfix">Заказать звонок</a>
- 						</div>
- 						<div class="clearfix">
- 							<div class="figure figure-one left">
- 								<p><span>Оплата: наличными или картой</span></br> цена от 150 грн/сутки</p>
- 							</div>
- 							<div class="figure figure-two left">
- 								<p><span>Удобное расположение</span></br> в центре Киева</p>
- 							</div>
- 							<div class="figure figure-three left">
- 								<p><span>8-6-2-1-местные комнаты</span></br> комфортные условия</p>
- 							</div>
- 						</div>
- 						<a href="#" class="reserve">Забронировать</a>
- 					</div>
- 				</div>
- 			</header>
- 			<div class="main-nav clearfix">
- 				<div class="container">
- 					<nav class="menu left">
- 						<ul>
- 							<li><a href="#" class="active">Главная</a></li>
- 							<li><a href="#">Номера и цены</a></li>
- 							<li><a href="#">Дополнительные услуги</a></li>
- 							<li><a href="#">Что мы предлагаем</a></li>
- 							<li><a href="#">Отзывы</a></li>
- 							<li><a href="#">Рядом с нами</a></li>
- 							<li><a href="#">Как добраться</a></li>
- 							<li><a href="#">Контакты</a></li>
- 						</ul>
- 					</nav>
- 					<div class="phones left">
- 						<span>+38&nbsp;(044)&nbsp;123-45-67</span>
- 						<span>+38&nbsp;(096)&nbsp;123-45-67</span>
- 					</div>
- 					<span class="call-back right"><a href="" id="call-back2">Заказать звонок</a href=""></span>
- 				</div>
- 			</div>
- 			<div class="container clearfix">
- 				<aside class="rooms-prices left">
- 					<h2>Номера и цены</h2>
- 					<a href="#" class="item-number-one active"><p class="wrap-text"><span>общий</span></br> 8 человек</p></a>
- 					<a href="#" class="item-number-two"><p class="wrap-text"><span>общий</span></br> 6 человек</p></a>
- 					<a href="#" class="item-number-three"><p class="wrap-text"><span>женский</span></br> 6 человек</p></a>
- 					<a href="#" class="item-number-four"><p class="wrap-text"><span>мужской</span></br> 6 человек</p></a>
- 					<a href="#" class="item-number-five"><p class="wrap-text"><span>VIP&nbsp;-&nbsp;1</span></br> 1-2 человека</p></a>
- 					<a href="#" class="item-number-six"><p class="wrap-text"><span>VIP&nbsp;-&nbsp;2</span></br> 1-2 человека</p></a>
- 				</aside>
- 				<section class="description-number-one left">
- 					<form action="" class="date">
- 						<p>Стоимость:</p>
- 						<select name="size" class="choose-date">
- 							<option value="Size" selected>с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 						</select>
- 					</form>
- 					<h2><span>общий</span> номер для 8 человек</h2>
- 					<p>Большие двухъярусные кровати, каждое спальное место размером 90см на 200см, ортопедические матрасы. Санузел на этаже. В номере есть индивидуальное освещение, шкафчики с замками (локеры).</p>
- 					<div class="day">
- 						<span>вс.- ср. 140 грн</span>
- 						<span>чт.- сб. 150 грн</span>
- 						<span>место/сутки</span>
- 					</div>
- 					<a href="#" class="reserve">Забронировать</a>
- 				</section>
- 				<section class="description-number-two left" style="display: none;">
- 					<form action="" class="date">
- 						<p>Стоимость:</p>
- 						<select name="size" class="choose-date">
- 							<option value="Size" selected>с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 						</select>
- 					</form>
- 					<h2><span>общий</span> номер для 6 человек</h2>
- 					<p>Большие двухъярусные кровати, каждое спальное место размером 90см на 200см, ортопедические матрасы. Санузел на этаже. В номере есть индивидуальное освещение, шкафчики с замками (локеры).</p>
- 					<div class="day">
- 						<span>вс.- ср. 120 грн</span>
- 						<span>чт.- сб. 130 грн</span>
- 						<span>место/сутки</span>
- 					</div>
- 					<a href="#" class="reserve">Забронировать</a>
- 				</section>
- 				<section class="description-number-three left" style="display: none;">
- 					<form action="" class="date">
- 						<p>Стоимость:</p>
- 						<select name="size" class="choose-date">
- 							<option value="Size" selected>с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 						</select>
- 					</form>
- 					<h2><span>Женский</span> номер для 6 человек</h2>
- 					<p>Большие двухъярусные кровати, каждое спальное место размером 90см на 200см, ортопедические матрасы. Санузел на этаже. В номере есть индивидуальное освещение, шкафчики с замками (локеры).</p>
- 					<div class="day">
- 						<span>вс.- ср. 110 грн</span>
- 						<span>чт.- сб. 185 грн</span>
- 						<span>место/сутки</span>
- 					</div>
- 					<a href="#" class="reserve">Забронировать</a>
- 				</section>
- 				<section class="description-number-four left" style="display: none;">
- 					<form action="" class="date">
- 						<p>Стоимость:</p>
- 						<select name="size" class="choose-date">
- 							<option value="Size" selected>с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 						</select>
- 					</form>
- 					<h2><span>Мужской</span> номер для 6 человек</h2>
- 					<p>Большие двухъярусные кровати, каждое спальное место размером 90см на 200см, ортопедические матрасы. Санузел на этаже. В номере есть индивидуальное освещение, шкафчики с замками (локеры).</p>
- 					<div class="day">
- 						<span>вс.- ср. 140 грн</span>
- 						<span>чт.- сб. 150 грн</span>
- 						<span>место/сутки</span>
- 					</div>
- 					<a href="#" class="reserve">Забронировать</a>
- 				</section>
- 				<section class="description-number-five left" style="display: none;">
- 					<form action="" class="date">
- 						<p>Стоимость:</p>
- 						<select name="size" class="choose-date">
- 							<option value="Size" selected>с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 						</select>
- 					</form>
- 					<h2><span>VIP - 1</span> (1-2 человека)</h2>
- 					<p>Большие двухъярусные кровати, каждое спальное место размером 90см на 200см, ортопедические матрасы. Санузел на этаже. В номере есть индивидуальное освещение, шкафчики с замками (локеры).</p>
- 					<div class="day">
- 						<span>вс.- ср. 240 грн</span>
- 						<span>чт.- сб. 250 грн</span>
- 						<span>место/сутки</span>
- 					</div>
- 					<a href="#" class="reserve">Забронировать</a>
- 				</section>
- 				<section class="description-number-six left" style="display: none;">
- 					<form action="" class="date">
- 						<p>Стоимость:</p>
- 						<select name="size" class="choose-date">
- 							<option value="Size" selected>с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 							<option value="">с 30.12.15 до 10.01.16</option>
- 						</select>
- 					</form>
- 					<h2><span>VIP - 2</span> (1-2 человека)</h2>
- 					<p>Большие двухъярусные кровати, каждое спальное место размером 90см на 200см, ортопедические матрасы. Санузел на этаже. В номере есть индивидуальное освещение, шкафчики с замками (локеры).</p>
- 					<div class="day">
- 						<span>вс.- ср. 260 грн</span>
- 						<span>чт.- сб. 280 грн</span>
- 						<span>место/сутки</span>
- 					</div>
- 					<a href="#" class="reserve">Забронировать</a>
- 				</section>
- 				<section class="apartment right">
- 					<div class="big-img">
- 						<img src="img/big-apartment.jpg" alt="" >
- 					</div>
- 					<div class="small-appartament">
- 						<a href="#"><img src="img/small-img-1.jpg" alt=""></a>
- 						<a href="#"><img src="img/small-img-2.jpg" alt=""></a>
- 						<a href="#"><img src="img/small-img-3.jpg" alt=""></a>
- 						<a href="#"><img src="img/small-img-4.jpg" alt=""></a>
- 					</div>
- 				</section>
- 				<section class="services left">
- 					<p class="entry">Заезд в 14-00,</br>выезд в 11-00</p>
- 					<p class="water">Горячая</br>вода 24/7</p> 
- 					<p class="wi-fi">Wi-Fi</p>
- 					<p class="lamp">Индивидуальные</br>светильники и розетки</p>
- 					<p class="lock">Шкафчики</br>на замках</p>
- 					<p class="linens">Постельное бельё и полотенца</br>высокого качества</p>
- 				</section>
- 			</div>
- 			<div class="container">
- 				<h3 class="reviews">Отзывы:</h3>
- 				<div class="slider">
- 					<ul class="bxslider">
- 						<li>
- 							<div class="clearfix">
- 								<img src="img/foto-face.png" alt="">
- 								<h4>Пьер, компания &ldquo;Монклер&rdquo;</h4>
- 							</div>
- 							<p>Остались только положительные эмоции от посещения вашего хостела, хорошая комната с красивым видом, не далеко до метро, да еще и в центре, очень удобно))) Очень уютная почти домашняя обстановка, чистота и ухоженность во всем. Потрясающее отношение персонала к гостям, организация отдыха. Есть wi-fi, если нет телефона или планшета под рукой, то в хостеле есть общий компьютер. Кровати были удобными, а в номере были предусмотрены небольшие индивидуальные шкафчики, также как и вешалки-плечики. </p>
- 						</li>
- 						<li>
- 							<div class="clearfix">
- 								<img src="img/foto-face.png" alt="">
- 								<h4>Пьер, компания &ldquo;Монклер&rdquo;</h4>
- 							</div>
- 							<p>Остались только положительные эмоции от посещения вашего хостела, хорошая комната с красивым видом, не далеко до метро, да еще и в центре, очень удобно))) Очень уютная почти домашняя обстановка, чистота и ухоженность во всем. Потрясающее отношение персонала к гостям, организация отдыха. Есть wi-fi, если нет телефона или планшета под рукой, то в хостеле есть общий компьютер. Кровати были удобными, а в номере были предусмотрены небольшие индивидуальные шкафчики, также как и вешалки-плечики. </p>
- 						</li>
- 						<li>
- 							<div class="clearfix">
- 								<img src="img/foto-face.png" alt="">
- 								<h4>Пьер, компания &ldquo;Монклер&rdquo;</h4>
- 							</div>
- 							<p>Остались только положительные эмоции от посещения вашего хостела, хорошая комната с красивым видом, не далеко до метро, да еще и в центре, очень удобно))) Очень уютная почти домашняя обстановка, чистота и ухоженность во всем. Потрясающее отношение персонала к гостям, организация отдыха. Есть wi-fi, если нет телефона или планшета под рукой, то в хостеле есть общий компьютер. Кровати были удобными, а в номере были предусмотрены небольшие индивидуальные шкафчики, также как и вешалки-плечики. </p>
- 						</li>
- 						<li>
- 							<div class="clearfix">
- 								<img src="img/foto-face.png" alt="">
- 								<h4>Пьер, компания &ldquo;Монклер&rdquo;</h4>
- 							</div>
- 							<p>Остались только положительные эмоции от посещения вашего хостела, хорошая комната с красивым видом, не далеко до метро, да еще и в центре, очень удобно))) Очень уютная почти домашняя обстановка, чистота и ухоженность во всем. Потрясающее отношение персонала к гостям, организация отдыха. Есть wi-fi, если нет телефона или планшета под рукой, то в хостеле есть общий компьютер. Кровати были удобными, а в номере были предусмотрены небольшие индивидуальные шкафчики, также как и вешалки-плечики. </p>
- 						</li>
- 					</ul>
- 				</div>
- 				<h5 class="write-us"><a href="#">Напишите нам</a> , что бы Вы хотели изменить или добавить</h5>
- 				
- 			</div>
- 		</div>
- 		<footer>
- 			<div class="container">
- 				<div class="contacts-wrap left">
- 					<h3>Контакты:</h3>
- 					<ul class="contacts">
- 						<li><a href="#">+38 (044) 123-45-67</a></li>
- 						<li><a href="#" class="ks">+38 (096) 123-45-67</a></li>
- 						<li><a href="#" class="life">+38 (063) 123-45-67</a></li>
- 						<li><a href="#" class="mtc">+38 (050) 123-45-67</a></li>
- 						<li><a href="#" class="e-mail"><span>E-mail:</span> lightlife@hostel.kiev.ua</a></li>
- 						<li><a href="#" class="viber"><span>Viber:</span> +380961234567</a></li>
- 						<li><a href="#" class="skype"><span>Skype:</span> lightlife</a></li>
- 						<li><a href="#" class="address">г.Киев, ул. Киквидзе, 1/2</br><span>м. &ldquo;Дружбы Народов&rdquo;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;м. &ldquo;Печерск&rdquo;</span></a></li>
- 					</ul>
- 				</div>
- 				<div class="wrap-feedback left">
- 					<form action="" class="feedback">
- 						<div class="bg-form">
- 							<h5>или Оставьте заявку,</br>мы свяжемся с Вами</h5>
- 							<input name="Name" type="text" class="name" placeholder="Ваше имя">
- 							<input name="phone" type="text" id="phone" placeholder="+38 (0__) ___ - __ - __">
- 						</div>
- 						<input class="reserve" type="submit" value="Отправить">
- 					</form>
- 						<form action="" id="modal-window" class="feedback" style="display: none;" title="Обратный Звонок">
- 						<div class="bg-form">
- 							<h5>Оставьте заявку, мы свяжемся с Вами</h5>
- 							<input name="Name" type="text" class="name" placeholder="Ваше имя">
- 							<input name="phone" type="text" id="phone" placeholder="+38 (0__) ___ - __ - __">
- 						</div>
- 						<input class="reserve" type="submit" value="Отправить">
- 					</form>
- 					<a class="copyright">Создание и продвижение <span>BUSINESS<span>SITE</span></span></a>	
- 				</div>
-
-
-
-
- 			</div>
-	 		</footer>
- 	</div>
- </body>
- </html>
+<body>
+	<div id="wrapper">
+		<div class="content">
+			<header class="clearfix">
+				<a href="#" class="logo-linkor"><img src="img/logoLinlor.png" alt="linkor"></a>
+				<div class="social right">
+					<a href="#" class="icon-yt"></a>
+					<a href="https://www.facebook.com/linkorskimboards/" class="icon-fb"></a>
+					<a href="#" class="icon-pt"></a>
+					<a href="#" class="language">ru</a>
+				</div>
+				<a href="#" id="touch-menu"><span></span></a>
+				<ul class="top-nav">
+					<li><a href="#9">О нас</a></li>
+					<li><a href="shop.html">Магазин</a></li>
+					<li><a href="#8">Блог</a></li>
+					<li><a href="#88">Доставка и оплата</a></li>
+					<li><a href="#78">Контакты</a></li>
+					<li class="bask"><a href="#77" class="basket">Корзина</a></li>
+				</ul>
+			</header>
+			<div id="slider">
+				<ul class="bxslider">
+				  <li><img src="img/Linkor-wake-1.jpg" alt="Linkor-wake-1"/></li>
+				  <li><img src="img/Linkor-wake-2.jpg"alt="Linkor-wake-2"/></li>
+				  <li><img src="img/Linkor-wake-3.jpg"alt="Linkor-wake-3"/></li>
+				  <li><img src="img/Linkor-wake-4.jpg"alt="Linkor-wake-4"/></li>
+				  <li><img src="img/Linkor-wake-5.jpg"alt="Linkor-wake-4"/></li>
+				  <li><img src="img/Linkor-wake-6.jpg"alt="Linkor-wake-4"/></li>
+				</ul>
+				<a href="#" id="linkorWake"><h2>LINKOR WAKE</h2></a>
+			</div>
+			<section class="container clearfix">
+				<h2>Skimboards</h2>
+				<div class="services-wrap clearfix">
+					<a href="#">
+						<div class="services-item skim-Small">
+							<img src="img/ClassicSkim-1.png" alt="ClassicSkim-1">
+							<h3>Classic Skim</h3>
+							<p class="price">280 $</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="services-item">
+							<img src="img/Arrow.png" alt="ClassicSkim-1">
+							<h3>Arrow</h3>
+							<p class="price">350 $</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="services-item">
+							<img src="img/patron.png" alt="ClassicSkim-1">
+							<h3>Patron</h3>
+							<p class="price">350 $</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="services-item">
+							<img src="img/ClassicSkim-2.png" alt="ClassicSkim-1">
+							<h3>Classic Skim</h3>
+							<p class="price">280 $</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="services-item">
+							<img src="img/Arrow-2.png" alt="ClassicSkim-1">
+							<h3>Arrow</h3>
+							<p class="price">350 $</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="services-item">
+							<img src="img/patron-2.png" alt="ClassicSkim-1">
+							<h3>Patron</h3>
+							<p class="price">350 $</p>
+						</div>
+					</a>
+				</div>
+				<a href="#" class="btn"><span>Все доски</span></a>
+			</section>
+			<article class="clearfix">
+				<img src="img/img-footer.jpg" alt="img-girls"  width="1920" height="600">
+		 		<div class="wrap-info">
+					<h2>Linkor skimboards</h2>
+					<p>Is the new pinnacle for performance in the Wake Industry.  Through years of quiet testing we have mastered our boards to provide the peak of performance for riders of any skill level.</p>
+					<a href="#" class="btn watch-video"><span>Посмотреть видео</span></a>
+				</div> 
+			</article>
+		</div>
+		<footer>
+				<div class="social left">
+					<p>Присоединяйтесь к нам!</p>
+					<div class="social-wrap">
+						<a href="https://www.facebook.com/linkorskimboards/" class="icon-fb"></a>
+						<a href="#" class="icon-pt"></a>
+						<a href="#" class="icon-yt"></a>
+					</div>
+				</div>
+				<div class="copyright right"><p>&copy; 2015 Linkor Skimboards</p></div>
+		</footer>
+	</div>
+</body>
+</html>
