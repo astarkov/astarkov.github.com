@@ -23,6 +23,11 @@
     margin-top: 14px;
   }
 }
+@media only screen and (max-width: 1080px){
+  .slider-shop{
+    max-width: 386px;
+  }
+}
 @media only screen and (max-width: 940px){
   .top-nav{display: none;}
   #touch-menu {display: block;}
@@ -85,7 +90,26 @@
     float: left;
     margin-left: 24px;
   }
-
+section .description-wrap{
+  padding-top: 5px;
+  padding-left: 15px;
+}
+section p.price{
+  margin-top: 3px;
+}
+section .large-skimboard .description{
+  margin-top: 6px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  font-size: 14px;
+}
+.size-color .choose-size, .size-color .choose-color{
+  margin-top: 8px;
+}
+.size-color .like{margin-top: 15px;}
+.size-color .wrap-by{
+margin-top: 15px;
+}
 
   section .wrap-shop>h2.shop-skimboards{
     margin-top: 25px;
@@ -100,7 +124,31 @@
     max-width: 360px;
   }
 }
+@media only screen and (max-width: 670px){
+  .slider-shop{
+    max-width: 198px;
+  }
+  @media only screen and (max-width: 520px){
+section .large-skimboard .large-img{
+  width: 30%;
+  margin-left: 2%;
+  margin-right: 10px;
+}
+section .description-wrap{
+  margin-left: 0; 
+}
+  .size-color .choose-size, .size-color .choose-color{
+    margin-right: 0;
+  }
+
+}
 @media only screen and (max-width: 480px){
+  section .description-wrap{
+    text-align: center; 
+  }
+  section .large-skimboard .description{
+    text-align: left;
+  }
   header .top-nav{
     max-width: 300px;
   }
@@ -120,12 +168,6 @@
     width: 100%;
   }
   section .services-item.category{display: none;}
- /*  section .services-item.category {
-   position: absolute;
-   top: 195px;
-   right: 0;
-   height: auto;
-   } */
    #category-menu{
     position: relative;
     margin-top: 30px;
@@ -192,35 +234,16 @@
 
     font-size:16px;
   }
-.btn.watch-video {
-  height: 28px;
-  width: 132px;
-  padding-bottom: 5px;
-}
-.btn.watch-video span{
-  font-size: 10px;
-  line-height: 24px;
-} 
+  .btn.watch-video {
+    height: 28px;
+    width: 132px;
+    padding-bottom: 5px;
+  }
+  .btn.watch-video span{
+    font-size: 10px;
+    line-height: 24px;
+  } 
 
-
-/*   footer .social p {
-  font-size: 10px;
-  margin: 12px 5px 0;
-}
-
-article .btn{
-  font-size: 8px;
-  height: 20px;
-  line-height: 16px;
-  padding:0 10px;
-}
-article .btn:after{
- font-size: 8px;
- line-height: 16px;
- }
- article .btn:hover:after{
-  height: 16px;
-} */
 }
 @media only screen and (max-width: 430px){
   header .social {

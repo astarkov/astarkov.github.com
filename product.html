@@ -12,12 +12,17 @@
 	<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			$('.bxslider').bxSlider({
-				auto: true,
+			$('.bx-slider-two').bxSlider({
+				// auto: true,
 			  	// autoControls: true,
 			  	// autoHover: true,
 			  	pause: 2000,
-			  	speed: 800
+			  	speed: 800,
+			  	// minSlides:3,
+			  	maxSlides: 6,
+			  	// moveSlides: 4,
+			  	slideWidth: true,
+			  	slideMargin: 60
 			  });
 
 			/*touch-menu*/
@@ -78,15 +83,14 @@
  					<span></span>
  				</a>
  				<ul class="top-nav">
- 					<li><a href="#2">О нас</a></li>
+ 					<li><a href="index.html">О нас</a></li>
  					<li><a href="shop.html">Магазин</a></li>
- 					<li><a href="#22">Блог</a></li>
+ 					<li><a href="blog.html">Блог</a></li>
  					<li><a href="#232">Доставка и оплата</a></li>
- 					<li><a href="#2323">Контакты</a></li>
- 					<li class="bask"><a href="#77" class="basket">Корзина</a></li>
+ 					<li><a href="contact.html">Контакты</a></li>
+ 					<li class="bask"><a href="card.html" class="basket">Корзина</a></li>
  				</ul>
  			</header>
-
  			<section class="container clearfix">
  				<h2 class="shop-skimboards">Магазин Skimboards</h2>
  				<div class="large-skimboard clearfix">
@@ -115,19 +119,25 @@
  							<p class="wrap-by">
  								<input class="by" type="submit" value="Купить">
  							</p>
- 								<a href="#" class="like">Like</a>
+ 							<a href="#" class="like">Like</a>
  						</form>
  					</div>
-
-
-
-
-
+ 				</div>
+ 				<div class="slider-shop">
+ 					<ul class="bx-slider-two">
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 						<li><img src="img/exile-sm.jpg" alt=""></li>
+ 					</ul>
  				</div>
  			</section>
  		</div>
-
-
  		<footer class="other-pages">
  			<div class="social center">
  				<p>Присоединяйтесь к нам!</p>
@@ -136,7 +146,7 @@
  					<a href="#" class="icon-pt"></a>
  					<a href="#" class="icon-yt"></a>
  				</div>
- 				</div>
+ 			</div>
  		</footer>
  	</div>
  </body>
