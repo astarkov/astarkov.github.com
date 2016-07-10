@@ -147,7 +147,6 @@ header .top-nav{
 	margin: 0 auto;
 	max-width: 745px;
 	padding-top: 40px;
-	display: none;
 }
 header .top-nav li{
 	float: left;
