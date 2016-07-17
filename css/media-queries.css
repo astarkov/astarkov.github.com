@@ -119,6 +119,9 @@
 }
 
 @media only screen and (max-width: 899px){
+	.shell-header-dropdown-content.active{
+		width: 100%;
+	}
 	header .container{width: 100%;}
 	.logo{margin-left: 0;}
 	.shell-header-nav-toggle{
@@ -140,6 +143,7 @@
 	.top-nav li{
 		display: block;
 	}
+		.top-nav>li{position: relative;}
 	.top-nav .fa-angle-down{
 		position: absolute;
 		right: 28px;
@@ -156,6 +160,16 @@
 
 }
 @media only screen and (max-width: 766px){
+	#ac-globalfooter .ac-gf-footer-legal-copyright, #ac-globalfooter .ac-gf-footer-legal-links{
+		margin-right: 0;
+	}
+	#ac-globalfooter .ac-gf-directory.with-5-columns .ac-gf-directory-column{
+		width: 50%;
+	}
+	#ac-globalfooter .ac-gf-footer-locale{
+		float: none;
+		margin: 10px 0;
+	}
 	._4f_7{
 		float: none;
 		width: 100%;

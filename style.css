@@ -37,6 +37,7 @@ input{
 body{
   font-family: 'Regular', sans-serif;
   -webkit-tap-highlight-color: transparent;
+  min-width: 320px;
 }
 .trs,.trs:before,.trs:after{
   transition: all 0.5s;
@@ -688,7 +689,7 @@ transition: opacity 0.5s ease-in-out 0s;
 .signup_form p span.error{
   font-size: 15px;
   color: red;
-  /*display: none;*/
+  display: none;
 }
 p.button button{
   display: inline-block;
@@ -818,6 +819,7 @@ text-decoration: underline;
 }
 
 /* Style footer - Apple */
+
 #ac-globalfooter {
     font-size: 12px;
     line-height: 1.66667;
@@ -825,7 +827,7 @@ text-decoration: underline;
     letter-spacing: normal;
     background-color: #f2f2f2;
     color: #666;
-    min-width: 1024px;
+    width: 100%;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -1114,3 +1116,16 @@ text-decoration: underline;
 }
 
 
+#ac-globalfooter .ac-gf-directory-column-section-state {
+    display: none;
+}
+#ac-globalfooter .ac-gf-directory-column-section-anchor {
+    right: 0;
+    cursor: default;
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    z-index: 10;
+}

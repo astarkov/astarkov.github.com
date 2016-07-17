@@ -24,10 +24,11 @@ $(function() {
     $(this).toggleClass("active");
   });
 });
+
+
 ///////////////////*Validation Form*///////////////////
 var form = $('.signup_form'),
 errorTxt = form.find('span.error');
-
 var showError = function(){
   var error = false;
   errorTxt.hide();
